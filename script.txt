@@ -26,3 +26,7 @@ $vmConfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize |
 
 # Create the VM
 New-AzVM -ResourceGroupName $rg -Location $location -VM $vmConfig
+# Enable the Boot diagnostic
+$rg = "RGEastUS"
+$vm = "DBVM1"
+$vm = Set-AzVMBootDiagnostic -VM $vm -Enable -ResourceGroupName $rg
