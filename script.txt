@@ -1,0 +1,28 @@
+# Set variables
+$rg = "RGEastUS"
+$location = "EastUS"
+$vmName = "DBVM1"
+$vnetName = "VNet1EUS"
+$subnetName = "Backend"
+$vmSize = "Standard_B1s"
+$username = "usename"
+$password = ConvertTo-SecureString "Strongpassword" -AsPlainText -Force
+
+# Get existing subnet
+$subnet = (Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rg).Subnets | `
+    Where-Object { $_.Name -eq $subnetName }
+
+# Create NIC
+$nic = New-AzNetworkInterface -Name "$vmName-nic" -ResourceGroupName $rg `
+    -Location $location -SubnetId $subnet.Id
+
+# Configure VM
+$cred = New-Object PSCredential ($username, $password)
+$vmConfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize |
+    Set-AzVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate |
+    Set-AzVMSourceImage -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2022-datacenter-smalldisk-g2" -Version "latest" |
+    Add-AzVMNetworkInterface -Id $nic.Id |
+    Set-AzVMSecurityProfile -SecurityType "TrustedLaunch"
+
+# Create the VM
+New-AzVM -ResourceGroupName $rg -Location $location -VM $vmConfig
