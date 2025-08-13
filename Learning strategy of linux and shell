@@ -8,7 +8,6 @@ Process management (ps, top, kill, jobs, fg, bg)
 System monitoring (df, du, free, uptime)
 Networking basics (ping, netstat, curl, wget)
 
-
 ✅ Phase 2: Shell Scripting Fundamentals
 
 Shell Types: bash, sh, zsh (focus on bash)
@@ -19,21 +18,17 @@ Writing first script (#!/bin/bash)
 
 Comments, execution permissions (chmod +x)
 
-
 Variables:
 
 Local and environment variables
 
 export, read, set, unset
 
-
 Quoting: Single vs Double quotes vs Backticks
 
 Command Substitution: $(command) vs command
 
 Exit Status: $?
-
-
 
 ---
 
@@ -47,22 +42,17 @@ if-else, elif, case
 
 Comparison operators: -eq, -ne, -gt, -lt, -f, -d, -z
 
-
 Loops:
 
 for, while, until
 
 break and continue
 
-
 Test Conditions:
 
 File test operators
 
 String and numeric comparisons
-
-
-
 
 ---
 
@@ -80,8 +70,6 @@ Command line arguments
 
 Debugging scripts (set -x, trap)
 
-
-
 ---
 
 ✅ Phase 5: File Handling & Text Processing
@@ -92,17 +80,13 @@ read, echo, cat, tee
 
 Redirection: >, >>, <
 
-
 Text Processing Tools:
 
 grep, awk, sed, cut, sort, uniq
 
-
 Regular Expressions (basic & extended)
 
 Log parsing & automation (DevOps real-time use)
-
-
 
 ---
 
@@ -116,8 +100,6 @@ Logging outputs to files
 
 Writing scripts with error codes and retry logic
 
-
-
 ---
 
 ✅ Phase 7: DevOps-Specific Shell Scripting
@@ -128,11 +110,9 @@ Creating users, managing permissions
 
 Disk monitoring and cleanup scripts
 
-
 Service Management:
 
 Start/stop services (systemctl, service)
-
 
 Backup & Restore scripts
 
@@ -140,11 +120,9 @@ CI/CD Integration:
 
 Pre-build/post-build scripts in Jenkins/Azure DevOps
 
-
 Cloud Automation:
 
 Automating Azure CLI commands inside shell scripts
-
 
 Docker & Kubernetes:
 
@@ -152,13 +130,9 @@ Automating container start/stop
 
 Checking pod health and restarting pods using kubectl
 
-
 Log Analysis:
 
 Parsing logs for failures and sending alerts
-
-
-
 
 ---
 
@@ -174,15 +148,11 @@ cron jobs
 
 at command
 
-
 Parallel execution:
 
 &, wait, xargs -P
 
-
 Secure scripting (avoid plain-text passwords)
-
-
 
 ---
 
@@ -200,8 +170,6 @@ Build a script that checks Docker container health and restarts if needed.
 
 Automate Azure resource creation using az CLI in bash scripts.
 
-
-
 ---
 
 ✅ Best Resources
@@ -212,20 +180,17 @@ Classic Shell Scripting by Arnold Robbins
 
 Learning bash Scripting by Ganesh Sanjiv Naik
 
-
 Free Online:
 
 LinuxCommand.org
 
 Advanced Bash Scripting Guide
 
-
 Practice Platforms:
 
 HackerRank (Linux shell challenges)
 
 Linux Academy (now A Cloud Guru)
-
 
 YouTube:
 
